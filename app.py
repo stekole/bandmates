@@ -55,7 +55,7 @@ def main(link,remove):
     fileExtention=os.path.splitext(os.path.basename(songFileName))[1]
     print(songFileNameNoExtention)
     finalSong='_'.join(instumentToRemove)
-    fileName=finishdir+songFileNameNoExtention+"_"+finalSong+"_final.mp3"
+    fileName="./"+finishdir+"/"+songFileNameNoExtention+"_"+finalSong+"_final.mp3"
     print("After move: ./"+fileName)
     shutil.copyfile('./'+finishSongPath, './'+fileName)
 
