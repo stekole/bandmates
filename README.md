@@ -2,6 +2,8 @@
 # bandmates
 Add in or remove your favorite bandmates from songs
 
+![image](https://github.com/stekole/bandmates/assets/30674956/4b9942e2-7f7f-4d21-94d0-329309348993)
+
 # Introduction
 
 Ever hate your bassist in your band? Use this script to download audio and remove instruments on the fly using [demuc](https://github.com/facebookresearch/demucs) and [yt-dlp](https://github.com/yt-dlp/yt-dlp).
