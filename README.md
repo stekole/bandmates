@@ -1,3 +1,4 @@
+
 # bandmates
 Add in or remove your favorite bandmates from songs
 
@@ -25,9 +26,7 @@ source env/bin/activate
 python3 -m pip install -r requirements.txt
 ```
 
-
-
-## Examples
+## Usage
 
 karaoke fridays at the officeeee
 ```python
@@ -43,3 +42,13 @@ Remove more than one instrument
 ```python
 python3 app.py --link "https://www.youtube.com/watch?v=tMDFv5m18Pw&ab_channel=OzzyOsbourneVEVO" -r guitar -r vocals
 ```
+## Input/Originals
+
+Original songs are kept in the `originals/` directory incase needed for reference later.
+
+## Output
+
+Output will end up in the `final/` folder in the format: `songName_<all_omitted_instruments_separated_by_underscores>_final.mp3`
+
+```example: ./final/Ozzy_Osbourne_-_Mama_I_m_Coming_Home_A440_Standard_Tuning_guitar_vocals_final.mp3```
+
