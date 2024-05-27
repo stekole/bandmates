@@ -30,20 +30,27 @@ python3 -m pip install -r requirements.txt
 
 ## Usage
 
+
+Download a song from a link (no removals)
+```python
+python3 app.py --link "https://www.youtube.com/watch?v=tMDFv5m18Pw&ab_channel=OzzyOsbourneVEVO"
+```
+
 karaoke fridays at the officeeee
 ```python
 python3 app.py --link "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -r vocals
 ```
 
-Download a default of a guitar-less track from a link
+Remove a guitar
 ```python
-python3 app.py --link "https://www.youtube.com/watch?v=tMDFv5m18Pw&ab_channel=OzzyOsbourneVEVO"
+python3 app.py --link "https://www.youtube.com/watch?v=tMDFv5m18Pw&ab_channel=OzzyOsbourneVEVO" -r guitar
 ```
 
 Remove more than one instrument
 ```python
 python3 app.py --link "https://www.youtube.com/watch?v=tMDFv5m18Pw&ab_channel=OzzyOsbourneVEVO" -r guitar -r vocals
 ```
+
 ## Input/Originals
 
 Original songs are kept in the `originals/` directory incase needed for reference later.

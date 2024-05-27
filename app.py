@@ -10,7 +10,7 @@ import click
 
 @click.command()
 @click.option('--link', help='link of the youtubezzz')
-@click.option('-r','--remove', help='what instrument do you want to strip? (example: `--remove guitar` or `-r bass -r drums -r vocals -r piano`)', default=["guitar"], multiple=True)
+@click.option('-r','--remove', help='what instrument do you want to strip? (example: `--remove guitar` or `-r bass -r drums -r vocals -r piano`)', multiple=True)
 
 
 def main(link,remove):
@@ -34,31 +34,40 @@ def main(link,remove):
 
     count=0
     finishedIInstrumeent=[]
-    instumentToRemove = list(remove)
-    print("..... .... ... .. ... . ... ... .. .. . .. .")
-    for index,item in enumerate(instumentToRemove):
-        if index == 0 and item not in finishedIInstrumeent:
-            print("INPUT: "+songFileName)
-            finishSongPath=stripInstrumentFromSong(songFileName,item)
-            finishedIInstrumeent.append(item)
-            prev=index
-        else:
-            print(prev, instumentToRemove[prev])
-            inputsong=processedFolder+'/no_'+instumentToRemove[prev]+'.mp3' #input previous file
-            print("INPUT: "+inputsong)
-            finishSongPath=stripInstrumentFromSong(inputsong,item)
-            finishedIInstrumeent.append(item)
-            prev=index
+    if remove: 
+        instumentToRemove = list(remove)
+        print("..... .... ... .. ... . ... ... .. .. . .. .")
+        for index,item in enumerate(instumentToRemove):
+            if index == 0 and item not in finishedIInstrumeent:
+                print("INPUT: "+songFileName)
+                finishSongPath=stripInstrumentFromSong(songFileName,item)
+                finishedIInstrumeent.append(item)
+                prev=index
+            else:
+                print(prev, instumentToRemove[prev])
+                inputsong=processedFolder+'/no_'+instumentToRemove[prev]+'.mp3' #input previous file
+                print("INPUT: "+inputsong)
+                finishSongPath=stripInstrumentFromSong(inputsong,item)
+                finishedIInstrumeent.append(item)
+                prev=index
+    else:
+        finishSongPath = songFileName
+
 
     print("This is the final song before rename: "+finishSongPath)
     songFileNameNoExtention=os.path.splitext(os.path.basename(songFileName))[0]
     fileExtention=os.path.splitext(os.path.basename(songFileName))[1]
     print(songFileNameNoExtention)
-    finalSong='_'.join(instumentToRemove)
-    fileName="./"+finishdir+"/"+songFileNameNoExtention+"_"+finalSong+"_final.mp3"
+
+    if remove:
+        finalSong='_'.join(instumentToRemove)
+        fileName="./"+finishdir+"/"+songFileNameNoExtention+"_"+finalSong+"_final.mp3"
+
+    else:
+        fileName = finishSongPath
+    
     print("After move: ./"+fileName)
     shutil.copyfile('./'+finishSongPath, './'+fileName)
-
 
 def stripInstrumentFromSong(fileName,type):
 
