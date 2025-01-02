@@ -29,6 +29,12 @@ python3 -m pip install -r requirements.txt
 ```
 
 ## Usage
+Options:
+  --link TEXT                     YouTube video link
+  -r, --remove
+      The -r/--remove flag can be used multiple times to remove several instruments. Valid options are: guitar, bass, drums, vocals, piano
+  --help   
+
 
 
 Download a song from a link (no removals)
@@ -51,13 +57,24 @@ Remove more than one instrument
 python3 app.py --link "https://www.youtube.com/watch?v=tMDFv5m18Pw&ab_channel=OzzyOsbourneVEVO" -r guitar -r vocals
 ```
 
-## Input/Originals
+## Tests
 
-Original songs are kept in the `originals/` directory incase needed for reference later.
+```
+python -m pytest tests/
+```
 
-## Output
+# Output
 
-Output will end up in the `final/` folder in the format: `songName_<all_omitted_instruments_separated_by_underscores>_final.mp3`
+Output files are always in MP3 format. The script will automatically convert input audio from YouTube to MP3.
 
-```example: ./final/Ozzy_Osbourne_-_Mama_I_m_Coming_Home_A440_Standard_Tuning_guitar_vocals_final.mp3```
+Processed files are stored in:
+ - `original/:` Original downloaded audio files
+ - `final/:` Processed audio files with removed instruments
+
+The final output filename will include which instruments were removed.
+
+Example:
+```
+ ./final/Ozzy_Osbourne_-_Mama_I_m_Coming_Home_A440_Standard_Tuning_guitar_vocals_final.mp3
+ ```
 
