@@ -29,13 +29,16 @@ python3 -m pip install -r requirements.txt
 ```
 
 ## Usage
+
+````
 Options:
   --link TEXT                     YouTube video link
   -r, --remove
       The -r/--remove flag can be used multiple times to remove several instruments. Valid options are: guitar, bass, drums, vocals, piano
-  --help   
+  --help
+```
 
-
+## Examples
 
 Download a song from a link (no removals)
 ```python
