@@ -30,7 +30,7 @@ python3 -m pip install -r requirements.txt
 
 ## Usage
 
-````
+```
 Options:
   --link TEXT                     YouTube video link
   -r, --remove
