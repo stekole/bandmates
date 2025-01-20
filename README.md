@@ -6,7 +6,7 @@ Add in or remove your favorite bandmates from songs
 
 # Introduction
 
-Ever hate the bassist in your band? Use this script to download audio and remove instruments on the fly using [demuc](https://github.com/facebookresearch/demucs) and [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+Do you hate the bass player in your band? Or maybe you just want to practice guitar to tracks like me. Use this script to download audio and remove instruments on the fly using [demuc](https://github.com/facebookresearch/demucs) and [yt-dlp](https://github.com/yt-dlp/yt-dlp).
 
 Remove any of the following supported instruments in the model
 - bass
