@@ -1,12 +1,16 @@
 
 # bandmates
-Add in or remove your favorite bandmates from songs
+
 
 ![image](https://github.com/stekole/bandmates/assets/30674956/4b9942e2-7f7f-4d21-94d0-329309348993)
 
 # Introduction
 
-Do you hate the bass player in your band? Or maybe you just want to practice guitar to tracks like me. Use this script to download audio and remove instruments on the fly using [demuc](https://github.com/facebookresearch/demucs) and [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+Tired of the bass player stealing the spotlight? (Or maybe you just want to practice guitar without Dave's questionable timing). This app lets you kick out any instrument from your favorite tracks and play along instead 🎸. I built it because I needed a drama-free way to practice guitar – no band drama required.
+
+Strips out instruments tracks from any song, letting you jam along with the band! 🎸
+
+Use this script to download audio and remove instruments on the fly using [demuc](https://github.com/facebookresearch/demucs) and [yt-dlp](https://github.com/yt-dlp/yt-dlp).
 
 Remove any of the following supported instruments in the model
 - bass
